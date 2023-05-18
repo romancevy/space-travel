@@ -86,8 +86,12 @@ body {
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-dark));
   line-height: 1.5;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+}
 
+/* root div */
+#root {
+  min-height: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr;
 }
@@ -433,19 +437,20 @@ body {
   background-position: bottom center;
 }
 
-.home {
+body {
+  min-height: 100vh;
   background-image: url(./assets/home/background-home-mobile.jpg);
 }
 
 @media (min-width: 35em) {
-  .home {
+  body {
     background-position: center center;
     background-image: url(./assets/home/background-home-tablet.jpg);
   }
 }
 
 @media (min-width: 45em) {
-  .home {
+  body {
     background-image: url(./assets/home/background-home-desktop.jpg);
   }
 }
