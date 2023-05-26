@@ -4,8 +4,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import App from "./App.tsx";
 import "./index.css";
 import Root from "./routes/root";
-import ErrorPage from "./pages/error-page";
-import Home from "./pages/Home";
+import ErrorPage from "./pages/ErrorPage";
+import Home from "./pages/home/Home";
+import Destination from "./pages/destination/Destination";
+import Crew from "./pages/crew/Crew";
+import Technology from "./pages/technology/Technology";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +19,19 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+
+      {
+        path: "/destination",
+        element: <Destination />,
+      },
+      {
+        path: "/crew",
+        element: <Crew />,
+      },
+      {
+        path: "/technology",
+        element: <Technology />,
       },
     ],
   },

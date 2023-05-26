@@ -1,0 +1,125 @@
+/* destionation */
+
+.tab-list {
+  --gap: 2rem;
+}
+
+.destination {
+  background-size: cover;
+  background-position: bottom center;
+  background-image: url(../../assets/destination/background-destination-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+  .destination {
+    background-position: center center;
+    background-image: url(../../assets/destination/background-destination-tablet.jpg);
+  }
+}
+
+@media (min-width: 45em) {
+  .destination {
+    background-image: url(../../assets/destination/background-destination-desktop.jpg);
+  }
+}
+
+/* *Underline */
+.underline-indicators > * {
+  cursor: pointer;
+  padding: var(--underline-gap, 1rem) 0;
+  border: 0;
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+  border-color: hsl(var(--clr-white) / 0.5);
+}
+
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+  color: hsl(var(--clr-white) / 1);
+  border-color: hsl(var(--clr-white) / 1);
+}
+
+/* destination layout */
+
+.grid-container--destination {
+  --flow-space: 2rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.grid-container--destination > picture {
+  grid-area: image;
+  max-width: 60%;
+}
+
+.grid-container--destination > .tab-list {
+  grid-area: tabs;
+}
+
+.grid-container--destination > .destination-info {
+  grid-area: content;
+}
+
+.destination-meta {
+  flex-direction: column;
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid hsl(var(--clr-white) / 0.1);
+}
+
+.destination-meta p {
+  font-size: 1.85rem;
+}
+
+.destination-meta {
+  flex-direction: column;
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid hsl(var(--clr-white) / 0.1);
+}
+
+@media (min-width: 35em) {
+  .destination-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 45em) {
+  .grid-container {
+    text-align: left;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        2rem,
+        1fr
+      );
+  }
+  /* destination specific */
+
+  .grid-container--destination {
+    justify-items: start;
+    align-content: start;
+    grid-template-areas:
+      ". title title ."
+      ". image tabs ."
+      ". image content .";
+  }
+
+  .grid-container--destination > picture,
+  .grid-container--crew > picture {
+    grid-area: image;
+    max-width: 90%;
+    align-self: start;
+  }
+
+  .destination-meta {
+    --gap: min(5vw, 6rem);
+    justify-content: start;
+  }
+}

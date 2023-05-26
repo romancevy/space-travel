@@ -1,0 +1,98 @@
+/* numbers */
+.number-indicators > * {
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+  border: 1px solid hsl(var(--clr-light) / 0.25);
+  border-radius: 50%;
+  font-size: var(--fs-500);
+  background-color: hsl(var(--clr-black) / 0.25);
+  aspect-ratio: 1;
+  color: hsl(var(--clr-white));
+  font-family: var(--ff-serif);
+}
+
+.number-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--clr-white) / 1);
+  color: hsl(var(--clr-dark));
+}
+
+.number-indicators > *:hover,
+.number-indicators > *:focus {
+  border: 1px solid hsl(var(--clr-white) / 0.5);
+}
+
+/* technology backgrounds */
+.technology {
+  background-size: cover;
+  background-position: bottom center;
+  background-image: url(../../assets/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+  .technology {
+    background-position: center center;
+    background-image: url(../../assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media (min-width: 45em) {
+  .technology {
+    background-image: url(../../assets/technology/background-technology-desktop.jpg);
+  }
+}
+
+/*  technology specific */
+.grid-container--technology {
+  padding: 0;
+  margin-bottom: 5rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.grid-container--technology > picture {
+  grid-area: image;
+}
+
+.grid-container--technology > .number-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--technology > .technology-details {
+  grid-area: content;
+}
+
+@media (min-width: 35em) {
+}
+
+@media (min-width: 45em) {
+  .grid-container--technology {
+    grid-template-columns:
+      minmax(1rem, 1fr) minmax(0, 4rem) minmax(0, 35rem)
+      minmax(0, 40rem);
+    justify-items: start;
+    margin-bottom: 5rem;
+    grid-template-areas:
+      ". title title  ."
+      ". tabs content  image"
+      ". tabs content  image";
+  }
+
+  .grid-container--technology > picture {
+    grid-area: image;
+    justify-self: end;
+  }
+
+  .grid-container--technology > .number-indicators {
+    display: grid;
+    gap: 2.5rem;
+    grid-area: tabs;
+  }
+
+  .grid-container--technology > .technology-details {
+    grid-area: content;
+  }
+}

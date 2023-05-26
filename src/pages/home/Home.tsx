@@ -1,9 +1,37 @@
+import "./home.css";
+import { Link } from "react-router-dom";
+
+// const gallery = Object.values(
+//   import.meta.glob(
+//     "../../assets/destination*.{png,jpg,jpeg,webp,PNG,JPEG,WEBP}",
+//     {
+//       eager: true,
+//       as: "url",
+//     }
+//   )
+// );
+// const gallery = Object.values(
+//   import.meta.glob("/public/assets/destination/*.{png,jpg,jpeg,webp,PNG,JPEG}", {
+//     eager: true,
+//     as: "url",
+//   })
+// );
+
+const gallery = Object.values(
+  import.meta.glob("/src/assets/destination/*.{png,jpg,jpeg,webp,PNG,JPEG}", {
+    eager: true,
+    as: "url",
+  })
+);
+
 const Home = () => {
+  // console.log(gallery);
+
   return (
     <>
       {/* <!-- Container --> */}
       {/* <!-- (--home, BEM Convention, wenn man eine klasse bearbeitet) --> */}
-      <div className="grid-container grid-container--home">
+      <main className="grid-container grid-container--home home">
         <div>
           <h1 className="text-accent letter-spacing-1 fs-500 ff-sans-cond uppercase">
             So, you want to travel to
@@ -17,14 +45,14 @@ const Home = () => {
           </p>
         </div>
         <div>
-          <a
-            href="#"
+          <Link
+            to={"destination"}
             className="large-button uppercase ff-serif text-dark bg-white"
           >
             Explore
-          </a>
+          </Link>
         </div>
-      </div>
+      </main>
     </>
   );
 };
