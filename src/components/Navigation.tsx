@@ -1,14 +1,16 @@
 import "./navigation.css";
-import { Link } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Logo from "../assets/shared/logo.svg";
 import { useState } from "react";
 import { NAVLINKS } from "../data/data";
+import { nanoid } from "nanoid";
 
 const Navigation = () => {
   // für den hamburger menu toggle
   const [isVisible, setIsVisible] = useState(false);
-  // für den Unterstrich
-  const [isActive, setIsActive] = useState("home");
+ 
+  const params = useParams();
+  console.log(params);
 
   const toggleMenu = () => {
     setIsVisible((prevState) => !prevState);
@@ -29,29 +31,24 @@ const Navigation = () => {
         <span className="sr-only">Menu</span>
       </button>
       {/* Navigation */}
-      <nav>
-        <ul
-          id="primary-navigation"
-          className={`primary-navigation underline-indicators flex ${
-            isVisible ? "visible" : ""
-          }`}
-        >
+      <nav
+        className={`primary-navigation underline-indicators flex ${
+          isVisible ? "visible" : ""
+        }`}
+      >
           {NAVLINKS.map((item) => (
-            <li
-              key={item.name}
-              className={isActive === item.name ? "active" : ""}
-            >
-              <Link
+           
+              <NavLink
+               key={nanoid()}
                 className="ff-sans-cond uppercase text-white letter-spacing-2"
                 to={item.path}
-                onClick={() => setIsActive(item.name)}
               >
                 <span>{item.id}</span>
                 {item.name}
-              </Link>
-            </li>
+              </NavLink>
+           
           ))}
-        </ul>
+  
       </nav>
     </header>
   );

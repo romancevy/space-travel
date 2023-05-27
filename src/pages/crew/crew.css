@@ -93,7 +93,14 @@
     justify-self: start;
   }
 
+  /* .grid-container--crew > picture {
+    grid-column: span 2;
+    align-self: end;
+  } */
   .grid-container--crew > picture {
+    grid-area: image;
+    max-width: 90%;
+    /* align-self: start; */
     grid-column: span 2;
     align-self: end;
   }

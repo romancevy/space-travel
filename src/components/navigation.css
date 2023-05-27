@@ -132,4 +132,8 @@
   .primary-navigation {
     margin-block: 2rem;
   }
+
+  /* .primary-navigation a.active {
+    color: red;
+  } */
 }

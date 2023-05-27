@@ -2,7 +2,6 @@ import { useOutletContext } from "react-router-dom";
 import "./technology.css";
 import { Technology } from "../../types/types";
 import { useState } from "react";
-import { uuid } from "uuidv4";
 import { nanoid } from "nanoid";
 
 const TechnologyPage = () => {

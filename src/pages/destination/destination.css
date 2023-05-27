@@ -111,8 +111,7 @@
       ". image content .";
   }
 
-  .grid-container--destination > picture,
-  .grid-container--crew > picture {
+  .grid-container--destination > picture {
     grid-area: image;
     max-width: 90%;
     align-self: start;

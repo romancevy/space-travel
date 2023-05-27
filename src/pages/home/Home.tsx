@@ -1,22 +1,7 @@
 import "./home.css";
 import { Link } from "react-router-dom";
 
-// const gallery = Object.values(
-//   import.meta.glob(
-//     "../../assets/destination*.{png,jpg,jpeg,webp,PNG,JPEG,WEBP}",
-//     {
-//       eager: true,
-//       as: "url",
-//     }
-//   )
-// );
-// const gallery = Object.values(
-//   import.meta.glob("/public/assets/destination/*.{png,jpg,jpeg,webp,PNG,JPEG}", {
-//     eager: true,
-//     as: "url",
-//   })
-// );
-
+// https://gist.github.com/Pigamo/6ad9d769a23bbdc07a9ef6f7226cbb55
 const gallery = Object.values(
   import.meta.glob("/src/assets/destination/*.{png,jpg,jpeg,webp,PNG,JPEG}", {
     eager: true,
