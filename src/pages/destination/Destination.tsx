@@ -15,7 +15,7 @@ const DestinationPage = () => {
         id="main"
         className="grid-container grid-container--destination flow destination"
       >
-        <h1 className="numbered-title">
+        <h1 className="numbered-title fade-in">
           <span aria-hidden="true">01</span> Pick your destination
         </h1>
 

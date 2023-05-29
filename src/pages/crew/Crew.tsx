@@ -14,7 +14,7 @@ const Crew = () => {
 
   return (
     <main id="main" className="grid-container grid-container--crew flow crew">
-      <h1 className="numbered-title">
+      <h1 className="numbered-title fade-in">
         <span aria-hidden="true">02</span> Meet your crew
       </h1>
 
@@ -24,9 +24,8 @@ const Crew = () => {
         aria-label="crew member list"
       >
         {crew.map((member, index) => (
-
           <button
-            key={nanoid()}
+            key={member.name}
             aria-selected={isActive === index ? "true" : "false"}
             onClick={() => setIsActive(index)}
           >
@@ -40,7 +39,7 @@ const Crew = () => {
         (member, index) =>
           isActive === index && (
             <>
-              <article className="crew-details flow" key={nanoid()}>
+              <article className="crew-details flow fade-in" key={nanoid()}>
                 <header className="flow--space-small">
                   <h2 className="fs-600 ff-serif uppercase">{member.role}</h2>
                   <p className="fs-700 uppercase ff-serif">{member.name}</p>

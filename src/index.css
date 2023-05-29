@@ -310,6 +310,17 @@ html {
   }
 }
 
-#main {
-  transition: all 0.2s ease-in;
+.fade-in {
+  animation: fade-in 0.4s ease-in;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }

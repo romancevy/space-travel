@@ -16,7 +16,7 @@ const TechnologyPage = () => {
       id="main"
       className="grid-container grid-container--technology flow technology"
     >
-      <h1 className="numbered-title">
+      <h1 className="numbered-title fade-in">
         <span aria-hidden="true">03</span> Space launch 101
       </h1>
 
@@ -24,7 +24,7 @@ const TechnologyPage = () => {
       {technology.map((item, index) => {
         return (
           isActive === index && (
-            <picture id="vehicle-image" key={nanoid()}>
+            <picture id="vehicle-image" className="fade-in" key={nanoid()}>
               <source
                 media="(min-width: 45em)"
                 srcSet={item?.images.portrait}
@@ -37,7 +37,7 @@ const TechnologyPage = () => {
       })}
 
       {/* Numbers */}
-      <div className="number-indicators flex">
+      <div className="number-indicators flex fade-in">
         {technology.map((_item, index) => (
           <button
             key={nanoid()}
