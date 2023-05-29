@@ -95,7 +95,7 @@ body {
 #root {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: min-content 1fr;
+  /* grid-template-rows: min-content 1fr; */
   overflow-x: hidden;
 }
 
@@ -128,6 +128,10 @@ select {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* ------------------- */
@@ -266,33 +270,6 @@ select {
 }
 
 /* ----------------------------- */
-/* !Page specific background     */
-/* ----------------------------- */
-
-/* body {
-  background-size: cover;
-  background-position: bottom center;
-} */
-
-/* body {
-  min-height: 100vh;
-  background-image: url(./assets/home/background-home-mobile.jpg);
-}
-
-@media (min-width: 35em) {
-  body {
-    background-position: center center;
-    background-image: url(./assets/home/background-home-tablet.jpg);
-  }
-}
-
-@media (min-width: 45em) {
-  body {
-    background-image: url(./assets/home/background-home-desktop.jpg);
-  }
-} */
-
-/* ----------------------------- */
 /* !Layout                       */
 /* ----------------------------- */
 
@@ -318,7 +295,7 @@ select {
   .grid-container {
     text-align: left;
     column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 32rem)) minmax(
         2rem,
         1fr
       );
@@ -331,4 +308,8 @@ select {
   .grid-container > *:last-child {
     grid-column: 3;
   }
+}
+
+#main {
+  transition: all 0.2s ease-in;
 }

@@ -1,5 +1,5 @@
 import "./navigation.css";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../assets/shared/logo.svg";
 import { useState } from "react";
 import { NAVLINKS } from "../data/data";
@@ -8,9 +8,6 @@ import { nanoid } from "nanoid";
 const Navigation = () => {
   // für den hamburger menu toggle
   const [isVisible, setIsVisible] = useState(false);
- 
-  const params = useParams();
-  console.log(params);
 
   const toggleMenu = () => {
     setIsVisible((prevState) => !prevState);
@@ -36,19 +33,16 @@ const Navigation = () => {
           isVisible ? "visible" : ""
         }`}
       >
-          {NAVLINKS.map((item) => (
-           
-              <NavLink
-               key={nanoid()}
-                className="ff-sans-cond uppercase text-white letter-spacing-2"
-                to={item.path}
-              >
-                <span>{item.id}</span>
-                {item.name}
-              </NavLink>
-           
-          ))}
-  
+        {NAVLINKS.map((item) => (
+          <NavLink
+            key={nanoid()}
+            className="ff-sans-cond uppercase text-white letter-spacing-2"
+            to={item.path}
+          >
+            <span>{item.id}</span>
+            {item.name}
+          </NavLink>
+        ))}
       </nav>
     </header>
   );

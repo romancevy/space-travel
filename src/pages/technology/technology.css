@@ -44,13 +44,18 @@
 
 /*  technology specific */
 .grid-container--technology {
-  padding: 0;
-  margin-bottom: 5rem;
+  padding-inline: 0;
+  padding-top: max(5rem, 23vh);
+  /* padding-bottom: max(5rem, 15vh); */
   grid-template-areas:
     "title"
     "image"
     "tabs"
     "content";
+}
+
+.grid-container--technology > .numbered-title {
+  grid-area: title;
 }
 
 .grid-container--technology > picture {
@@ -74,13 +79,14 @@
       minmax(1rem, 1fr) minmax(0, 4rem) minmax(0, 35rem)
       minmax(0, 40rem);
     justify-items: start;
-    margin-bottom: 5rem;
     grid-template-areas:
-      ". title title  ."
-      ". tabs content  image"
-      ". tabs content  image";
+      ". title title title"
+      ". tabs content image"
+      ". tabs content image";
   }
-
+  .grid-container--technology > .numbered-title {
+    grid-area: title;
+  }
   .grid-container--technology > picture {
     grid-area: image;
     justify-self: end;

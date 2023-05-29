@@ -1,5 +1,5 @@
-import { useOutletContext } from "react-router-dom";
 import "./crew.css";
+import { useOutletContext } from "react-router-dom";
 import { CrewMember } from "../../types/types";
 import { useState } from "react";
 import Picture from "../../components/Picture";
@@ -24,6 +24,7 @@ const Crew = () => {
         aria-label="crew member list"
       >
         {crew.map((member, index) => (
+
           <button
             key={nanoid()}
             aria-selected={isActive === index ? "true" : "false"}

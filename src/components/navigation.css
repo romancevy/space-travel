@@ -1,7 +1,11 @@
 /* *primary-header */
 .primary-header {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  right: 0;
 }
 
 .logo {
@@ -88,6 +92,7 @@
     width: 2rem;
     aspect-ratio: 1;
     border: none;
+    cursor: pointer;
   }
 
   .mobile-nav-toggle[aria-expanded="true"] {
@@ -132,8 +137,4 @@
   .primary-navigation {
     margin-block: 2rem;
   }
-
-  /* .primary-navigation a.active {
-    color: red;
-  } */
 }

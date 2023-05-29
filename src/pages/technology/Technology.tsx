@@ -10,7 +10,6 @@ const TechnologyPage = () => {
   }>();
 
   const [isActive, setIsActive] = useState(0);
-  console.log(isActive);
 
   return (
     <main
@@ -39,7 +38,7 @@ const TechnologyPage = () => {
 
       {/* Numbers */}
       <div className="number-indicators flex">
-        {technology.map((item, index) => (
+        {technology.map((_item, index) => (
           <button
             key={nanoid()}
             aria-selected={isActive === index ? "true" : "false"}

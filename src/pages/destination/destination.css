@@ -45,12 +45,16 @@
 /* destination layout */
 
 .grid-container--destination {
+  padding-top: max(5rem, 23vh);
   --flow-space: 2rem;
   grid-template-areas:
     "title"
     "image"
     "tabs"
     "content";
+}
+.grid-container--destination > .numbered-title {
+  grid-area: title;
 }
 
 .grid-container--destination > picture {
@@ -88,23 +92,13 @@
   .destination-meta {
     flex-direction: row;
     justify-content: space-evenly;
+    padding-bottom: max(3rem, 10vh);
   }
 }
 
 @media (min-width: 45em) {
-  .grid-container {
-    text-align: left;
-    column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
-        2rem,
-        1fr
-      );
-  }
-  /* destination specific */
-
   .grid-container--destination {
     justify-items: start;
-    align-content: start;
     grid-template-areas:
       ". title title ."
       ". image tabs ."
@@ -114,7 +108,7 @@
   .grid-container--destination > picture {
     grid-area: image;
     max-width: 90%;
-    align-self: start;
+    align-self: center;
   }
 
   .destination-meta {

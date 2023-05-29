@@ -37,12 +37,17 @@
 
 /* crew layout */
 .grid-container--crew {
+  padding-top: max(5rem, 23vh);
   --flow-space: 2rem;
   grid-template-areas:
     "title"
     "image"
     "tabs"
     "content";
+}
+
+.grid-container--crew > .numbered-title {
+  grid-area: title;
 }
 
 .grid-container--crew > picture {
@@ -93,13 +98,9 @@
     justify-self: start;
   }
 
-  /* .grid-container--crew > picture {
-    grid-column: span 2;
-    align-self: end;
-  } */
   .grid-container--crew > picture {
     grid-area: image;
-    max-width: 90%;
+    max-width: 100%;
     /* align-self: start; */
     grid-column: span 2;
     align-self: end;
