@@ -23,15 +23,15 @@ const Home = () => {
             <span className="fs-900 ff-serif text-white d-block">Space</span>
           </h1>
           <p className="fade-in">
-            Let’s face it; if you want to go to space, you might as well
+            Let's face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
-            Well sit back, and relax because we’ll give you a truly out of this
+            Well sit back, and relax because we'll give you a truly out of this
             world experience!
           </p>
         </div>
         <div>
           <Link
-            to={"destination"}
+            to="destination"
             className="large-button uppercase ff-serif text-dark bg-white fade-in"
           >
             Explore

@@ -8,7 +8,6 @@ const DestinationPage = () => {
   const { destinations } = useOutletContext<{ destinations: Destination[] }>();
   const [isActive, setIsActive] = useState(0);
 
-  // console.log(destinations)
   return (
     <>
       <main
@@ -19,6 +18,7 @@ const DestinationPage = () => {
           <span aria-hidden="true">01</span> Pick your destination
         </h1>
 
+        {/* Pictures */}
         {destinations.map(
           (item, index) =>
             isActive === index && <Picture key={item.name} item={item} />
@@ -38,31 +38,29 @@ const DestinationPage = () => {
         </div>
 
         <article className="destination-info">
-          {destinations.map(
-            (item, index) =>
-              isActive === index && (
-                <div key={item.travel}>
-                  <h2 className="fs-800 ff-serif text-white d-block uppercase">
-                    {item.name}
-                  </h2>
+          {destinations.map((item, index) => (
+            <div
+              key={item.name}
+              style={{ display: isActive === index ? "block" : "none" }}
+            >
+              <h2 className="fs-800 ff-serif text-white d-block uppercase">
+                {item.name}
+              </h2>
 
-                  <p className="text-accent">{item.description}</p>
+              <p className="text-accent">{item.description}</p>
 
-                  <div className="destination-meta flex uppercase">
-                    <div>
-                      <h3 className="text-accent fs-200">Avg. distance</h3>
-                      <p className="text-white ff-serif fs-700">
-                        {item.distance}
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-accent fs-200">Est. travel time</h3>
-                      <p className="text-white fs-700">{item.travel}</p>
-                    </div>
-                  </div>
+              <div className="destination-meta flex uppercase">
+                <div>
+                  <h3 className="text-accent fs-200">Avg. distance</h3>
+                  <p className="text-white ff-serif fs-700">{item.distance}</p>
                 </div>
-              )
-          )}
+                <div>
+                  <h3 className="text-accent fs-200">Est. travel time</h3>
+                  <p className="text-white fs-700">{item.travel}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </article>
       </main>
     </>
