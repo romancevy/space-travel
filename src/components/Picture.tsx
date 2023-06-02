@@ -9,10 +9,13 @@ interface PictureProps {
 }
 
 const Picture = ({ item }: PictureProps) => {
+  const itemName = item?.name;
+  const itemImages = item?.images;
+
   return (
     <picture id="moon-image" className="fade-in">
-      <source srcSet={item?.images.webp} type="image/webp" />
-      <img src={item?.images.png} alt={item?.name} />
+      <source srcSet={itemImages?.webp} type="image/webp" />
+      <img src={itemImages?.png} alt={itemName} />
     </picture>
   );
 };

@@ -6,11 +6,11 @@ import { NAVLINKS } from "../data/data";
 import { nanoid } from "nanoid";
 
 const Navigation = () => {
-  // für den hamburger menu toggle
+  // für das hamburger menu toggle
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleMenu = () => {
-    setIsVisible((prevState) => !prevState);
+    setIsVisible((prevState) => prevState !== true);
   };
 
   return (
