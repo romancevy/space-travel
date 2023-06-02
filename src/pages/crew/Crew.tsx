@@ -1,9 +1,8 @@
 import "./crew.css";
 import { useOutletContext } from "react-router-dom";
 import { CrewMember } from "../../types/types";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Picture from "../../components/Picture";
-import { nanoid } from "nanoid";
 
 const Crew = () => {
   const { crew } = useOutletContext<{
@@ -38,8 +37,8 @@ const Crew = () => {
       {crew.map(
         (member, index) =>
           isActive === index && (
-            <>
-              <article className="crew-details flow fade-in" key={nanoid()}>
+            <Fragment key={member.name}>
+              <article className="crew-details flow fade-in">
                 <header className="flow--space-small">
                   <h2 className="fs-600 ff-serif uppercase">{member.role}</h2>
                   <p className="fs-700 uppercase ff-serif">{member.name}</p>
@@ -47,8 +46,8 @@ const Crew = () => {
                 <p>{member.bio}</p>
               </article>
               {/* !Pictures */}
-              <Picture key={nanoid()} item={member} />
-            </>
+              <Picture item={member} />
+            </Fragment>
           )
       )}
     </main>
